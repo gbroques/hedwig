@@ -1,0 +1,28 @@
+# Requirements
+
+**Project Description**: A course-based online learning platform.
+
+* Material is organized into courses
+* Courses are broken up into lessons
+* Lessons are broken up into several short videos within a YouTube playlist
+* Take and answer questions between each video
+* YouTube playlist may be updated and published via WebSockets
+
+## TODO
+
+### Backend
+
+* Add Course model and resource route
+* Add Lesson model and resource route
+* Integrate YouTube API into application
+* Add Question model and resource route
+* Add Answer model and resource route
+* Add WebSockets functionality
+* Add ability to update YouTube lesson playlist
+* Add WebSockets for realtime playlist updates
+
+### Frontend
+
+* Add page for viewing courses
+* Add course page for viewing lessons
+* Add lesson page for viewing video content
