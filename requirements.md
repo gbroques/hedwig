@@ -12,11 +12,11 @@
 
 ### Backend
 
-* Add Course model and resource route
-* Add Lesson model and resource route
+* Add Course model, migration, and resource route
+* Add Lesson model, migration, and resource route
 * Integrate YouTube API into application
-* Add Question model and resource route
-* Add Answer model and resource route
+* Add Question model, migration, and resource route
+* Add Answer model, migration, and resource route
 * Add WebSockets functionality
 * Add ability to update YouTube lesson playlist
 * Add WebSockets for realtime playlist updates
