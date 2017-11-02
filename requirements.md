@@ -6,7 +6,7 @@
 * Courses are broken up into lessons
 * Lessons are broken up into several short videos within a YouTube playlist
 * Take and answer questions between each video
-* YouTube playlist may be updated and published via WebSockets
+* Real-time YouTube playlist update notifications
 
 ## TODO
 
@@ -17,9 +17,7 @@
 * Integrate YouTube API into application
 * Add Question model, migration, and resource route
 * Add Answer model, migration, and resource route
-* Add WebSockets functionality
-* Add ability to update YouTube lesson playlist
-* Add WebSockets for realtime playlist updates
+* Add real-time YouTube playlist update notifications
 
 ### Frontend
 
