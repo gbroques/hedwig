@@ -12,4 +12,9 @@ class Course extends Model
      * @var array
      */
     protected $guarded = [];
+
+    public function getImageAttribute($value)
+    {
+      return 'img/' . $value;
+    }
 }
