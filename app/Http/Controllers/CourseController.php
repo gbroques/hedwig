@@ -18,16 +18,6 @@ class CourseController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -46,18 +36,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        return Course::find($course->id);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Course $course)
-    {
-        //
+        return $course;
     }
 
     /**
@@ -69,7 +48,6 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        $course = Course::find($course->id);
         $course->update($request->all());
         return $course;
     }
@@ -82,6 +60,6 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        return Course::destroy($course->id);
+        return $course->destroy();
     }
 }
