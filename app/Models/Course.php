@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Lesson;
 use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
@@ -17,4 +18,13 @@ class Course extends Model
     {
       return 'img/' . $value;
     }
+
+    /**
+     * Get the lessons associate with a course.
+     */
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
+
 }

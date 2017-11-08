@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
@@ -12,4 +13,12 @@ class Lesson extends Model
      * @var array
      */
     protected $guarded = [];
+
+    /**
+     * Get the course associated with a lesson.
+     */
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }
