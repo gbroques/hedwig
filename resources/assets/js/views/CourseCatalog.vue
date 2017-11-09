@@ -1,11 +1,10 @@
 <template>
   <div>
+    <page-title class="page-title">Courses</page-title>
     <md-card
-      md-with-hover
       v-for="course in courses"
       style="margin-bottom: 35px"
       key="course.id">
-    
       <md-card-header>
         <md-card-header-text>
           <div class="md-title">{{ course.name }}</div>
@@ -21,7 +20,9 @@
       </md-card-content>
 
       <md-card-actions>
-        <md-button>View Course</md-button>
+        <md-button @click="viewCourse(course)">
+          View Course
+        </md-button>
       </md-card-actions>
     </md-card>
   </div>
@@ -39,6 +40,15 @@ export default {
 
   created() {
     axios.get('/api/courses').then(response => this.courses = response.data);
+  },
+
+  methods: {
+    viewCourse(course) {
+      this.$router.push({
+        name: 'CoursePage',
+        params: { id: course.slug }
+      });
+    }
   }
 }
 </script>
