@@ -20,15 +20,12 @@
     @include('layouts.toolbar')
 
     <div class="container">
-      <page-title class="page-title">@{{ $route.name }}</page-title>
-
       @yield('content')
     </div>
   
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js"></script>
   <script src="js/app.js"></script>
 
 </body>
