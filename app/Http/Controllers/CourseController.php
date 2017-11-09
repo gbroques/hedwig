@@ -36,8 +36,13 @@ class CourseController extends Controller
      */
     public function show(Request $request, $courseId)
     {
+        $with = [];
+        if (!empty($request->input('with'))) {
+            $with = $request->input('with');
+        }
         return Course::where('id', $courseId)
                      ->orWhere('slug', $courseId)
+                     ->with($with)
                      ->firstOrFail();
     }
 
