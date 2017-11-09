@@ -12,11 +12,14 @@ class LessonController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param  int  $courseId
      * @return \Illuminate\Http\Response
      */
-    public function index(Course $course)
+    public function index($courseId)
     {
-        return $course->lessons()->get();
+        return Course::with('lessons')
+                     ->where('id', $courseId)
+                     ->firstOrFail();
     }
 
     /**
