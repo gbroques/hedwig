@@ -31,12 +31,14 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Course  $course
+     * @param  string $courseId
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show(Request $request, $courseId)
     {
-        return $course;
+        return Course::where('id', $courseId)
+                     ->orWhere('slug', $courseId)
+                     ->firstOrFail();
     }
 
     /**
