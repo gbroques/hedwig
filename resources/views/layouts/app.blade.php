@@ -11,13 +11,13 @@
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
 
   <div id="app">
 
-    @include('layouts.toolbar')
+    @include('layouts/toolbar')
 
     <div class="container">
       @yield('content')
@@ -26,7 +26,7 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.js"></script>
-  <script src="js/app.js"></script>
+  <script src="{{ mix('js/app.js') }}"></script>
 
 </body>
 </html>

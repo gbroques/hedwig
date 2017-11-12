@@ -6,7 +6,7 @@
     <div class="frame">
       <img class="course-image" :src="course.image" :alt="course.name">
     </div>
-    <div class="md-display-1" style="margin-bottom: 20px">Lessons</div>
+    <div class="md-subheading" style="margin-bottom: 20px">Lessons</div>
     <md-card
       v-for="lesson in lessons"
       style="margin-bottom: 35px"
@@ -43,7 +43,7 @@ export default {
   },
 
   created() {
-    const id = this.$route.params.id;
+    const id = this.$route.params.courseId;
     const url = '/api/courses/' + id;
     axios.get(url, {
       params: {
@@ -53,12 +53,14 @@ export default {
       this.course = response.data;
       this.lessons = response.data.lessons;
     });
-
   },
 
   methods: {
     viewLesson(lesson) {
-      console.log('Viewing lesson', lesson);
+      this.$router.push({
+        name: 'LessonPage',
+        params: { lessonId: lesson.slug }
+      });
     }
   }
 }

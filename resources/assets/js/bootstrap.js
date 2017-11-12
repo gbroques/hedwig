@@ -2,11 +2,13 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueMaterial from 'vue-material';
 import 'vue-material/dist/vue-material.css';
+import VueYouTubeEmbed from 'vue-youtube-embed';
 import axios from 'axios';
 
 window.Vue = Vue;
 Vue.use(VueRouter);
 Vue.use(VueMaterial);
+Vue.use(VueYouTubeEmbed);
 
 window.axios = axios;
 

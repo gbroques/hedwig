@@ -7,9 +7,14 @@ const routes = [
     component: require('./views/CourseCatalog')
   },
   {
-    path: '/courses/:id',
+    path: '/course/:courseId',
     name: 'CoursePage',
     component: require('./views/CoursePage')
+  },
+  {
+    path: '/course/:courseId/lesson/:lessonId',
+    name: 'LessonPage',
+    component: require('./views/LessonPage')
   }
 ];
 

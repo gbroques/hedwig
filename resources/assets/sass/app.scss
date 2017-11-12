@@ -1,9 +1,23 @@
 .container {
-  max-width: 960px;
+  max-width: 1280px;
   padding: 35px 20px;
   margin: 0 auto;
 }
 
 .page-title {
-  margin-bottom: 35px;
+  margin-bottom: 20px;
+}
+
+
+/**
+ * Override Vue Material styles
+ */
+
+/** 
+ *   iframe:not(.md-image) {
+ *     height: auto;
+ *   }
+ */
+iframe[id^="youtube-player-"] {
+  height: 390px !important;
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="md-display-2"><slot /></span>
+    <span class="md-display-1"><slot /></span>
     <hr />
   </div>
 </template>

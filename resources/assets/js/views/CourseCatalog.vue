@@ -1,6 +1,8 @@
 <template>
   <div>
-    <page-title class="page-title">Courses</page-title>
+    <page-title class="page-title">
+      Courses
+    </page-title>
     <md-card
       v-for="course in courses"
       style="margin-bottom: 35px"
@@ -46,7 +48,7 @@ export default {
     viewCourse(course) {
       this.$router.push({
         name: 'CoursePage',
-        params: { id: course.slug }
+        params: { courseId: course.slug }
       });
     }
   }
