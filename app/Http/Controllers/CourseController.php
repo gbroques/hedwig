@@ -69,6 +69,9 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        return $course->destroy();
+        $success = $course->delete();
+        return response()->json([
+            'success' => $success
+        ]);
     }
 }

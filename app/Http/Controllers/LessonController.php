@@ -69,6 +69,9 @@ class LessonController extends Controller
      */
     public function destroy(Lesson $lesson)
     {
-        return $lesson->destroy();
+        $success = $lesson->delete();
+        return response()->json([
+            'success' => $success
+        ]);
     }
 }
