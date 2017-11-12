@@ -8,11 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {
     /**
-     * The attributes that aren't mass assignable.
+     * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'slug',
+        'description',
+        'youtube_playlist_id',
+        'course_id'
+    ];
 
     /**
      * Get the course associated with a lesson.

@@ -8,11 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     /**
-     * The attributes that aren't mass assignable.
+     * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'slug',
+        'description',
+        'image'
+    ];
 
     public function getImageAttribute($value)
     {
