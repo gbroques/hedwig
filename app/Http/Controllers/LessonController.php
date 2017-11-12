@@ -29,14 +29,23 @@ class LessonController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified lesson.
+     * Optionally request relations.
      *
-     * @param  \App\Models\Lesson  $lesson
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string  $lessonId  ID or slug
      * @return \Illuminate\Http\Response
      */
-    public function show(Lesson $lesson)
+    public function show(Request $request, $lessonId)
     {
-        return $lesson;
+        $with = [];
+        if (!empty($request->input('with'))) {
+            $with = $request->input('with');
+        }
+        return Lesson::where('id', $lessonId)
+                     ->orWhere('slug', $lessonId)
+                     ->with($with)
+                     ->firstOrFail();
     }
 
     /**

@@ -30,8 +30,10 @@ class CourseController extends Controller
 
     /**
      * Display the specified resource.
+     * Optionally request relations.
      *
-     * @param  string $courseId
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string  $courseId  ID or slug
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request, $courseId)
