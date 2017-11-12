@@ -36,6 +36,8 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        // Uncomment during testing for more helpful messages
+        // error_log($exception);
         parent::report($exception);
     }
 
