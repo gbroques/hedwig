@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Aciddose\RequestRelationships\Traits\RequestRelationships;
 use App\Models\Course;
 use App\Models\Question;
 use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
+    use RequestRelationships;
+
     /**
      * The attributes that are mass assignable.
      *

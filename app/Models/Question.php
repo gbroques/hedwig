@@ -24,7 +24,15 @@ class Question extends Model
      */
     public function answers()
     {
-        return $this->belongsToMany(Answer::class);
+        return $this->hasMany(Answer::class);
+    }
+
+    /**
+     * Get the lesson associated with a question.
+     */
+    public function lesson()
+    {
+        return $this->belongsTo(Lesson::class);
     }
 
     /**
