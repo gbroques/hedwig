@@ -13,9 +13,9 @@ class Answer extends Model
      *
      * @var array
      */
-    protected $fillable = ['text'];
+    protected $fillable = ['text', 'question_id'];
 
-    public function questions()
+    public function question()
     {
         return $this->belongsTo(Question::class);
     }
