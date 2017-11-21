@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Course;
+use App\Models\Question;
 use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
@@ -26,5 +27,13 @@ class Lesson extends Model
     public function course()
     {
         return $this->belongsTo(Course::class);
+    }
+
+    /**
+     * Get the questions associated with a lesson.
+     */
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
     }
 }
