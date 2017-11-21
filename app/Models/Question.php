@@ -34,12 +34,4 @@ class Question extends Model
     {
         return $this->belongsTo(Lesson::class);
     }
-
-    /**
-     * Get the lesson associated with a question.
-     */
-    public function lesson()
-    {
-        return $this->belongsTo(Lesson::class);
-    }
 }
