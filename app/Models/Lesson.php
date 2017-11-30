@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
-    use RequestRelationships;
 
     /**
      * The attributes that are mass assignable.
