@@ -22,3 +22,4 @@ Route::resource('courses', 'CourseController');
 Route::resource('courses.lessons', 'Course\LessonController');
 Route::resource('lessons', 'LessonController');
 Route::resource('questions', 'QuestionController');
+Route::resource('lessons.questions', 'Lesson\QuestionController');
