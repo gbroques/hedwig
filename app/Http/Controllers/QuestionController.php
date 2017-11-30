@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\QuestionCreated;
 use App\Models\Question;
 use Illuminate\Http\Request;
 
@@ -24,8 +25,10 @@ class QuestionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        return Question::create($request->all());
+    {  
+        $question = Question::create($request->all());
+        broadcast(new QuestionCreated($question))->toOthers();
+        return $question;
     }
 
     /**
