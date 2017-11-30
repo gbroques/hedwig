@@ -18,3 +18,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
     host: 'nginx',
     open: false
   });
+
+mix.js('resources/assets/js/echo.js', 'js');

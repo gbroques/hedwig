@@ -26,7 +26,18 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.js"></script>
-  <script src="{{ mix('js/app.js') }}"></script>
-
+  <script>
+      window.Laravel = {
+          'csrfToken': '{{ csrf_token() }}',
+      };
+  </script>
+  <script src="//localhost:6001/socket.io/socket.io.js"></script>
+  <script src="{{ asset('/js/echo.js') }}"></script>
+  <script>
+      if (typeof io === "undefined"){
+        alert('Please check your laravel-echo-server status!');
+      }
+  </script>
+  <script src="{{ asset('/js/app.js') }}"></script>
 </body>
 </html>
