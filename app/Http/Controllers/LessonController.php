@@ -38,14 +38,12 @@ class LessonController extends Controller
      */
     public function show(Request $request, $lessonId)
     {
-        $with = [];
-        if (!empty($request->input('with'))) {
-            $with = $request->input('with');
-        }
+        $with = $request->input('with');
         return Lesson::where('id', $lessonId)
                      ->orWhere('slug', $lessonId)
-                     ->with($with)
-                     ->firstOrFail();
+                     ->when($with, function ($q) use ($with) {
+                         return $q->with($with);
+                     })->firstOrFail();
     }
 
     /**
