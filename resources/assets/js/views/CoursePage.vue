@@ -1,7 +1,7 @@
 <template>
   <div>
     <page-title class="page-title">
-      {{ course.name }}
+      <span>{{ course.name }}</span>
     </page-title>
     <div class="frame">
       <img class="course-image" :src="course.image" :alt="course.name">
@@ -38,11 +38,23 @@ export default {
   data () {
     return {
       course: {},
-      lessons: []
+      lessons: [],
+      subscriptionCount: 0
     }
   },
 
   created() {
+    const appId = 'ac702bd6074d54ff';
+    const auth_key = 'c430b622a9c77fae1657523e15be2b41';
+    const baseUrl = 'http://localhost:6001/apps/' + appId;
+    axios.get(baseUrl + '/status', {
+      params: {
+        auth_key
+      }
+    }).then(response => {
+      this.subscriptionCount = response.data.subscription_count;
+    });
+
     const id = this.$route.params.courseId;
     const url = '/api/courses/' + id;
     axios.get(url, {
